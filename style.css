@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+
+    --color-background-gradient: linear-gradient(96deg, hsl(242, 50%, 38%) 0%, hsl(244, 38%, 28%) 99.68%);
+    --color-base-background: hsl(283, 47%, 97%);
+    --color-title: hsl(320, 69%, 42%);
+    --color-text: hsl(244, 38%, 28%);
+}
+
+html,
+body,
+input,
+textarea,
+button {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--color-text);
+    background: var(--color-base-background);
+}
+
+#app {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 1fr 1fr 1fr max-content;
+    place-items: center;
+}
+
+.astronauta {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+}
+
+.astronauta h1,
+.contato h1 {
+    font-size: 3.1rem;
+    color: var(--color-title);
+    font-weight: 900;
+
+    margin-top: 1.7rem;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: normal;
+    text-align: start;
+}
+
+
+.astronauta .button-down {
+    background: none;
+    border: 0;
+    margin: 3rem 0 9rem;
+}
+
+.imagem>img {
+    width: 34rem;
+}
+
+#planetas {
+    background: var(--color-background-gradient);
+}
+
+.moons {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5rem;
+    padding: 5rem 4rem;
+}
+
+.card {
+    background: var(--color-base-background);
+    box-sizing: border-box;
+    border-radius: 2rem;
+    padding: 2.6rem;
+}
+
+.card h1 {
+    font-size: 3rem;
+    color: var(--color-title);
+    font-weight: 900;
+    margin: 3rem 0 1.8rem;
+}
+
+.card P {
+    font-weight: 600;
+    padding-right: 4rem;
+    text-justify: auto;
+}
+
+.contato {
+    width: 100%;
+    background: var(--color-base-background);
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    place-items: start;
+    padding: 7rem 4rem;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-top: 4rem;
+}
+
+.input-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+
+}
+
+.input-wrapper img {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: 1.4rem;
+    position: absolute;
+}
+
+.input-wrapper input {
+
+    width: 100%;
+    padding: 1.2rem 1.6rem 1.2rem 5rem;
+
+    border: 1.5px solid var(--color-text);
+    border-radius: 1.6rem;
+    background: transparent;
+
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.input-wrapper textarea {
+    width: 100%;
+    padding: 1.2rem;
+
+    border: 1.5px solid var(--color-text);
+    border-radius: 1.6rem;
+    background: transparent;
+
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.input-wrapper input::placeholder,
+textarea::-moz-placeholder {
+    color: var(--color-text);
+    opacity: 0.9;
+}
+
+button {
+    background: var(--color-background-gradient);
+    padding: 1.6rem;
+    border: 0;
+    border-radius: 1.6rem;
+    width: 16rem;
+
+    color: var(--color-base-background);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 9rem;
+    padding: 1.6rem;
+
+    background: var(--color-background-gradient);
+    color: var(--color-base-background);
+    text-align: center;
+
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+@media(min-width:1200px) {
+
+
+    .astronauta {
+        display: grid;
+        grid-template-areas:
+            "A B"
+            "C B";
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: repeat(2, max-content);
+    }
+
+    .title {
+        grid-area: A;
+        display: flex;
+        flex-direction: column;
+        place-self: end;
+        justify-self: left;
+
+        padding: 31rem 0 17rem 10rem;
+    }
+
+    .astronauta h1,
+    .contato h1 {
+        font-size: 5rem;
+        color: var(--color-title);
+        font-weight: 900;
+
+        margin-top: 1.7rem;
+    }
+
+    h3 {
+        font-size: 3rem;
+        font-weight: 600;
+        text-align: start;
+    }
+
+    .astronauta .button-down {
+        grid-area: C;
+        margin: 0 2.8rem 13rem 10rem;
+
+        display: flex;
+        flex-direction: column;
+        place-self: start;
+        justify-self: left;
+    }
+
+    .imagem {
+        grid-area: B;
+
+        display: flex;
+        place-self: start;
+        justify-self: left;
+    }
+
+    .imagem>img {
+        width: 70rem;
+        padding-right: 2.9rem;
+        margin-bottom: 10rem;
+    }
+
+    .moons {
+        display: flex;
+        gap: 6rem;
+        padding: 6rem 4rem;
+        place-content: center;
+    }
+
+    #planetas {
+        width: 100%;
+    }
+
+    .card {
+        width: 36rem;
+    }
+
+    .contato {
+        display: flex;
+        align-items: center;
+        gap: 9.2rem;
+        padding: 0;
+        height: 62.2rem;
+        margin: 0 auto;
+        background: url(./assets/bacgroud-contact.svg);
+        background-repeat: no-repeat;
+        background-position: right;  
+    }
+    
+    .contato h1{
+        font-size: 4rem;
+    }
+    
+    .stars{
+        flex: 1;
+    }
+    
+    form{
+        flex: 1;
+        margin-left: 10.9rem;
+    }
+    
+
+
+
+
+}
